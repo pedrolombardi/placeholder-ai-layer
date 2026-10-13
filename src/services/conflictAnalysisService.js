@@ -39,7 +39,7 @@ export async function analyzeConflict(conflict) {
     );
 
     let reason = hasEvidence
-    ? "Evidências simuladas coletadas. A análise de decisão ainda não foi implementada."
+    ? "Evidências coletadas. A análise de decisão ainda não foi implementada."
     : "Não existem evidências disponíveis para este conflito.";
 
 if (
@@ -68,8 +68,6 @@ if (
     target?.type === "VARCHAR2(200)" &&
     profile?.status === "OK" &&
     charset?.status === "OK" &&
-    profile.simulated === true &&
-    charset.simulated === true &&
     profile.lengthThreshold === 200 &&
     profile.valuesAboveThreshold > 0 &&
     profile.maxObservedLength > 200 &&
@@ -92,7 +90,7 @@ if (
         verdict,
         proposal,
         reason,
-        simulated: true,
+        simulated: Object.values(evidence).some(e => e.simulated !== false),
         toolsUsed,
         evidence
     };
