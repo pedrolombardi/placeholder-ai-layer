@@ -51,7 +51,7 @@ export const profileColumnTool = {
 export const sampleValuesTool = {
     type: "function",
     name: "sampleValues",
-    description: "Retorna uma amostra simulada dos valores encontrados em uma coluna.",
+    description: "Retorna os valores distintos de uma coluna (dado real, via DB Layer; colunas com muitos valores distintos voltam mascaradas por LGPD).",
     parameters: {
         type: "object",
         properties: {
@@ -75,7 +75,7 @@ export const sampleValuesTool = {
 export const checkCharsetTool = {
     type: "function",
     name: "checkCharset",
-    description: "Retorna informações simuladas sobre o charset e a codificação de uma coluna.",
+    description: "Retorna o charset, a collation e os bytes por caractere de uma coluna (dado real, via DB Layer).",
     parameters: {
         type: "object",
         properties: {
