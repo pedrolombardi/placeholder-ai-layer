@@ -1,23 +1,8 @@
-import express from "express";
 import dotenv from "dotenv";
-import aiRoutes from "./routes/aiRoutes.js";
-
-dotenv.config();
-
-const app = express();
-
-app.use(express.json());
-
-app.get("/health", (req, res) => {
-    res.json({
-        status: "ok"
-    });
-});
-
-app.use("/ai", aiRoutes);
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-    console.log(`AI Service rodando na porta ${PORT}`);
-});
+import { createApp } from "./app.js";
+dotenv.config({ quiet: true });
+const port = Number(process.env.PORT || 3001);
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error("PORT deve ser um inteiro entre 1 e 65535");
+}
+createApp().listen(port, () => console.log(`AI Service rodando na porta ${port}`));

@@ -1,0 +1,32 @@
+[
+  {
+    "repo": "placeholder-backend-core",
+    "file": "backend/src/clients.ts",
+    "commit": "fbb043ee45c6ac2246310f5428a2b60fd5f9a64b",
+    "comparisonWithDeliveredZip": "equal after CR/LF normalization"
+  },
+  {
+    "repo": "placeholder-backend-core",
+    "file": "backend/src/schemas.ts",
+    "commit": "fbb043ee45c6ac2246310f5428a2b60fd5f9a64b",
+    "comparisonWithDeliveredZip": "equal after CR/LF normalization"
+  },
+  {
+    "repo": "placeholder-db-layer",
+    "file": "src/tools/tools.ts",
+    "commit": "5ffd41337e1a92c8a5358aa1e480ad2573b2c47e",
+    "comparisonWithDeliveredZip": "equal after CR/LF normalization"
+  },
+  {
+    "repo": "placeholder-db-layer",
+    "file": "src/routes/tools.ts",
+    "commit": "5ffd41337e1a92c8a5358aa1e480ad2573b2c47e",
+    "comparisonWithDeliveredZip": "equal after CR/LF normalization"
+  },
+  {
+    "repo": "placeholder-platform",
+    "file": "scripts/e2e.mjs",
+    "commit": "529c7b427b38900c14ff2bbf559f8b41b4328407",
+    "comparisonWithDeliveredZip": "equal after CR/LF normalization"
+  }
+]

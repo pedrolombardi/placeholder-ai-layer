@@ -1,0 +1,149 @@
+
+> ai-service@1.0.0 test:coverage
+> node --test --experimental-test-coverage test/conflict.test.js test/http.test.js test/providers.test.js test/startup.test.js
+
+✔ C-014: historical DB evidence preserves PROPOSE and Core contract (1.597ms)
+✔ C-015: [0,1,2] preserves DEFER (0.177ms)
+✔ C-018: unsupported conflict defers without inventing evidence (0.1044ms)
+✔ Multibyte values: BYTE overflow with <=200 characters still proposes 300 CHAR (0.5222ms)
+✔ CHAR semantics uses character length and labels reason correctly (0.1173ms)
+✔ Conservative rule: no overflow (0.0889ms)
+✔ Conservative rule: too long for proposal (0.0607ms)
+✔ Conservative rule: unknown threshold (0.0667ms)
+✔ Conservative rule: wrong threshold (0.11ms)
+✔ Conservative rule: unknown semantics (0.0681ms)
+✔ Conservative rule: missing measured bytes (0.0465ms)
+✔ Conservative rule: string instead of numeric count (0.0661ms)
+✔ Conservative rule: contradictory count (0.0584ms)
+✔ Conservative rule: zero character length (0.0551ms)
+✔ Conservative rule: no measured overflow (0.043ms)
+✔ No automatic generalization: other table (0.0572ms)
+✔ No automatic generalization: other target (0.0413ms)
+✔ No automatic generalization: other source type (0.0335ms)
+✔ Simulated evidence cannot produce PROPOSE (0.0578ms)
+✔ NO_DATA and INVALID produce DEFER (0.1212ms)
+✔ Unknown charset produces DEFER (0.0616ms)
+✔ Masked, truncated or binary samples never prove business semantics (0.132ms)
+✔ Dependency failures propagate instead of becoming fake DEFER evidence (0.3285ms)
+✔ health remains liveness-only and does not need LLM keys or DB (26.0436ms)
+✔ Core payload -> real HTTP AI -> fixture HTTP DB preserves full response contract (13.0412ms)
+✔ DB_LAYER_URL is read after imports; trailing slash remains valid (24.522ms)
+✔ C-015 through HTTP defers and forwards the expected tool payload (21.2242ms)
+✔ Unsupported conflict through HTTP does not call DB (15.8604ms)
+✔ NO_DATA through HTTP produces a valid DEFER (45.9201ms)
+✔ DB 400 stays INVALID -> DEFER and does not expose upstream text (33.6795ms)
+✔ Malformed DB response bad-json returns controlled 502 (29.7634ms)
+✔ Malformed DB response null returns controlled 502 (30.2726ms)
+✔ Malformed DB response array returns controlled 502 (30.8765ms)
+✔ Malformed DB response empty returns controlled 502 (31.1822ms)
+✔ Reject evidence inconsistent with the DB contract: {"column":"wrong"} (30.687ms)
+✔ Reject evidence inconsistent with the DB contract: {"database":"oracle"} (30.6001ms)
+✔ Reject evidence inconsistent with the DB contract: {} (31.1048ms)
+✔ Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":"2"} (30.5043ms)
+✔ Reject evidence inconsistent with the DB contract: {"thresholdUnit":"UNKNOWN"} (30.8509ms)
+✔ Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":11} (31.7198ms)
+✔ DB 5xx returns controlled 502 without leaking response body (31.445ms)
+✔ DB redirect is refused instead of forwarding evidence requests (32.0671ms)
+✔ Timeout covers timeout (65.091ms)
+✔ Timeout covers slow-body (76.2576ms)
+✔ Invalid DB configuration is sanitized: not-a-url (1.9894ms)
+✔ Invalid DB configuration is sanitized: file (13.0657ms)
+✔ Invalid DB configuration is sanitized: http (15.8586ms)
+✔ Invalid DB configuration is sanitized: http (15.3456ms)
+✔ Invalid timeout 0 is a configuration error (15.035ms)
+✔ Invalid timeout -1 is a configuration error (15.8819ms)
+✔ Invalid timeout abc is a configuration error (15.332ms)
+✔ Invalid timeout 1.5 is a configuration error (1.0235ms)
+✔ Invalid timeout 60001 is a configuration error (14.317ms)
+✔ Network refusal produces controlled 502 (16.2786ms)
+✔ Invalid conflict input returns 400 before accessing DB: {} (14.6527ms)
+✔ Invalid conflict input returns 400 before accessing DB: [] (15.8865ms)
+✔ Invalid conflict input returns 400 before accessing DB: null (16.0759ms)
+✔ Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{},"target":{"database":"oracle","type":"VARCHAR2(200)"}} (15.3747ms)
+✔ Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":123,"column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}} (15.5799ms)
+✔ Invalid conflict input returns 400 before accessing DB: {"conflictId":" ","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}} (14.809ms)
+✔ Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":null,"target":{"database":"oracle","type":"VARCHAR2(200)"}} (15.2235ms)
+✔ Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":[]} (15.8705ms)
+✔ Malformed JSON and oversized body return JSON 400/413 (31.008ms)
+✔ Chat validates input type and size: undefined  (14.8463ms)
+✔ Chat validates input type and size: object  (15.2204ms)
+✔ Chat validates input type and size: object  (16.0472ms)
+✔ Chat validates input type and size: object  (15.6048ms)
+✔ Chat validates input type and size: number  (15.0258ms)
+✔ Chat validates input type and size: boolean  (15.4816ms)
+✔ Chat validates input type and size: string 0 (15.1216ms)
+✔ Chat validates input type and size: string 3 (0.9551ms)
+✔ Chat validates input type and size: string 10001 (2.4938ms)
+✔ Chat without credentials returns 503; health still works (26.4939ms)
+✔ Tool allowlist rejects inherited names and removed demo tools (0.7036ms)
+✔ Tool arguments reject null, arrays and missing identifiers (0.2333ms)
+✔ Unknown route is JSON 404 and internal exception details stay private (17.7716ms)
+✔ HTTP chat success preserves provider response fields (2.9591ms)
+✔ Provider selection normalizes case and whitespace (1.1015ms)
+✔ Unknown provider names reject without echoing their values (0.296ms)
+✔ Configuration is checked per attempted provider (0.1538ms)
+✔ Invalid AI timeout 0 rejects (0.0665ms)
+✔ Invalid AI timeout NaN rejects (0.061ms)
+✔ Invalid AI timeout -1 rejects (0.0393ms)
+✔ Invalid AI timeout 120001 rejects (0.041ms)
+✔ Primary success returns the original chat response contract (0.1849ms)
+✔ Fallback runs once and records the actual provider (0.1528ms)
+✔ Missing primary credentials can use a configured fallback (0.0982ms)
+✔ Same provider is not retried as its own fallback; errors are sanitized (0.1897ms)
+✔ Empty provider text activates fallback rather than successful empty JSON (0.0739ms)
+✔ Both providers failing returns a controlled error (0.6441ms)
+✔ Provider factory rejects unknown provider (0.0949ms)
+✔ Gemini supports responses without optional steps (0.2057ms)
+✔ Gemini returns every tool result using matching call IDs (0.1441ms)
+✔ Gemini handles successive tool rounds and stops at three (0.1289ms)
+✔ Gemini caps a batch before executing more than eight tools (0.0878ms)
+✔ Gemini rejects unknown tools and duplicate call IDs (0.1187ms)
+✔ Gemini malformed response is not accepted: undefined (0.0512ms)
+✔ Gemini malformed response is not accepted: {} (0.0388ms)
+✔ Gemini malformed response is not accepted: {"output_text":""} (0.0505ms)
+✔ Gemini malformed response is not accepted: {"steps":{}} (0.0344ms)
+✔ Gemini malformed response is not accepted: {"steps":[{"type":"function_call","id":"call-1","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]} (0.0276ms)
+✔ Gemini malformed response is not accepted: {"id":"i","steps":[{"type":"function_call","id":"","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]} (0.0275ms)
+✔ OpenAI Responses request keeps instructions and model (0.109ms)
+✔ OpenAI empty output is an error (0.0684ms)
+✔ Only the three real DB tools are advertised (0.0428ms)
+✔ Standalone server loads DB URL from .env without keys and passes smoke against fixture DB (370.0607ms)
+ℹ tests 106
+ℹ suites 0
+ℹ pass 106
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1385.079
+ℹ start of coverage report
+ℹ -----------------------------------------------------------------------------
+ℹ file                         | line % | branch % | funcs % | uncovered lines
+ℹ -----------------------------------------------------------------------------
+ℹ scripts                      |        |          |         | 
+ℹ  smoke.mjs                   | 100.00 |    88.89 |  100.00 | 
+ℹ src                          |        |          |         | 
+ℹ  app.js                      |  93.55 |    85.71 |  100.00 | 22-23
+ℹ  config                      |        |          |         | 
+ℹ   aiConfig.js                | 100.00 |   100.00 |  100.00 | 
+ℹ  errors.js                   | 100.00 |   100.00 |  100.00 | 
+ℹ  prompts                     |        |          |         | 
+ℹ   systemPrompt.js            | 100.00 |   100.00 |  100.00 | 
+ℹ  providers                   |        |          |         | 
+ℹ   geminiProvider.js          | 100.00 |    96.67 |  100.00 | 
+ℹ   openaiProvider.js          |  94.12 |    60.00 |  100.00 | 8
+ℹ   providerFactory.js         |  80.00 |    66.67 |  100.00 | 18-22
+ℹ  routes                      |        |          |         | 
+ℹ   aiRoutes.js                | 100.00 |   100.00 |  100.00 | 
+ℹ  services                    |        |          |         | 
+ℹ   aiService.js               | 100.00 |   100.00 |  100.00 | 
+ℹ   conflictAnalysisService.js | 100.00 |   100.00 |  100.00 | 
+ℹ  tools                       |        |          |         | 
+ℹ   migrationTools.js          | 100.00 |    91.04 |  100.00 | 
+ℹ   toolDefinitions.js         | 100.00 |   100.00 |  100.00 | 
+ℹ   toolExecutor.js            | 100.00 |   100.00 |  100.00 | 
+ℹ -----------------------------------------------------------------------------
+ℹ all files                    |  98.14 |    94.84 |  100.00 | 
+ℹ -----------------------------------------------------------------------------
+ℹ end of coverage report
+

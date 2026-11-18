@@ -1,0 +1,27 @@
+[Tool Calling] Executando: constructor
+[Tool Calling] Executando: profileColumn
+[Tool Calling] Executando: checkCharset
+[Tool Calling] Executando: profileColumn
+[Tool Calling] Executando: checkCharset
+[
+  {
+    "case": "DB_LAYER_URL evaluated after import",
+    "expected": "http://configured-after-import.invalid:4321/tools/profile-column",
+    "actual": "http://localhost:3002/tools/profile-column"
+  },
+  {
+    "case": "Unknown inherited tool constructor must reject",
+    "actual": {
+      "table": "clientes"
+    }
+  },
+  {
+    "case": "Multibyte strings exceed BYTE threshold but fit 300 CHAR",
+    "expected": "PROPOSE",
+    "actual": "DEFER"
+  },
+  {
+    "case": "Invalid DB JSON value",
+    "actual": "TypeError"
+  }
+]
