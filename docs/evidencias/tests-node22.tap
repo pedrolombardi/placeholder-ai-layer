@@ -1,0 +1,647 @@
+TAP version 13
+# Subtest: C-014: historical DB evidence preserves PROPOSE and Core contract
+ok 1 - C-014: historical DB evidence preserves PROPOSE and Core contract
+  ---
+  duration_ms: 1.3295
+  type: 'test'
+  ...
+# Subtest: C-015: [0,1,2] preserves DEFER
+ok 2 - C-015: [0,1,2] preserves DEFER
+  ---
+  duration_ms: 0.256
+  type: 'test'
+  ...
+# Subtest: C-018: unsupported conflict defers without inventing evidence
+ok 3 - C-018: unsupported conflict defers without inventing evidence
+  ---
+  duration_ms: 0.1551
+  type: 'test'
+  ...
+# Subtest: Multibyte values: BYTE overflow with <=200 characters still proposes 300 CHAR
+ok 4 - Multibyte values: BYTE overflow with <=200 characters still proposes 300 CHAR
+  ---
+  duration_ms: 0.1719
+  type: 'test'
+  ...
+# Subtest: CHAR semantics uses character length and labels reason correctly
+ok 5 - CHAR semantics uses character length and labels reason correctly
+  ---
+  duration_ms: 0.1213
+  type: 'test'
+  ...
+# Subtest: Conservative rule: no overflow
+ok 6 - Conservative rule: no overflow
+  ---
+  duration_ms: 0.5052
+  type: 'test'
+  ...
+# Subtest: Conservative rule: too long for proposal
+ok 7 - Conservative rule: too long for proposal
+  ---
+  duration_ms: 0.1455
+  type: 'test'
+  ...
+# Subtest: Conservative rule: unknown threshold
+ok 8 - Conservative rule: unknown threshold
+  ---
+  duration_ms: 0.0803
+  type: 'test'
+  ...
+# Subtest: Conservative rule: wrong threshold
+ok 9 - Conservative rule: wrong threshold
+  ---
+  duration_ms: 0.2262
+  type: 'test'
+  ...
+# Subtest: Conservative rule: unknown semantics
+ok 10 - Conservative rule: unknown semantics
+  ---
+  duration_ms: 0.2436
+  type: 'test'
+  ...
+# Subtest: Conservative rule: missing measured bytes
+ok 11 - Conservative rule: missing measured bytes
+  ---
+  duration_ms: 0.0964
+  type: 'test'
+  ...
+# Subtest: Conservative rule: string instead of numeric count
+ok 12 - Conservative rule: string instead of numeric count
+  ---
+  duration_ms: 0.0514
+  type: 'test'
+  ...
+# Subtest: Conservative rule: contradictory count
+ok 13 - Conservative rule: contradictory count
+  ---
+  duration_ms: 0.0411
+  type: 'test'
+  ...
+# Subtest: Conservative rule: zero character length
+ok 14 - Conservative rule: zero character length
+  ---
+  duration_ms: 0.0379
+  type: 'test'
+  ...
+# Subtest: Conservative rule: no measured overflow
+ok 15 - Conservative rule: no measured overflow
+  ---
+  duration_ms: 0.042
+  type: 'test'
+  ...
+# Subtest: No automatic generalization: other table
+ok 16 - No automatic generalization: other table
+  ---
+  duration_ms: 0.0698
+  type: 'test'
+  ...
+# Subtest: No automatic generalization: other target
+ok 17 - No automatic generalization: other target
+  ---
+  duration_ms: 0.0389
+  type: 'test'
+  ...
+# Subtest: No automatic generalization: other source type
+ok 18 - No automatic generalization: other source type
+  ---
+  duration_ms: 0.0363
+  type: 'test'
+  ...
+# Subtest: Simulated evidence cannot produce PROPOSE
+ok 19 - Simulated evidence cannot produce PROPOSE
+  ---
+  duration_ms: 0.0809
+  type: 'test'
+  ...
+# Subtest: NO_DATA and INVALID produce DEFER
+ok 20 - NO_DATA and INVALID produce DEFER
+  ---
+  duration_ms: 0.1031
+  type: 'test'
+  ...
+# Subtest: Unknown charset produces DEFER
+ok 21 - Unknown charset produces DEFER
+  ---
+  duration_ms: 0.0626
+  type: 'test'
+  ...
+# Subtest: Masked, truncated or binary samples never prove business semantics
+ok 22 - Masked, truncated or binary samples never prove business semantics
+  ---
+  duration_ms: 0.1382
+  type: 'test'
+  ...
+# Subtest: Dependency failures propagate instead of becoming fake DEFER evidence
+ok 23 - Dependency failures propagate instead of becoming fake DEFER evidence
+  ---
+  duration_ms: 0.3312
+  type: 'test'
+  ...
+# Subtest: health remains liveness-only and does not need LLM keys or DB
+ok 24 - health remains liveness-only and does not need LLM keys or DB
+  ---
+  duration_ms: 25.0012
+  type: 'test'
+  ...
+# Subtest: Core payload -> real HTTP AI -> fixture HTTP DB preserves full response contract
+ok 25 - Core payload -> real HTTP AI -> fixture HTTP DB preserves full response contract
+  ---
+  duration_ms: 14.9015
+  type: 'test'
+  ...
+# Subtest: DB_LAYER_URL is read after imports; trailing slash remains valid
+ok 26 - DB_LAYER_URL is read after imports; trailing slash remains valid
+  ---
+  duration_ms: 4.7267
+  type: 'test'
+  ...
+# Subtest: C-015 through HTTP defers and forwards the expected tool payload
+ok 27 - C-015 through HTTP defers and forwards the expected tool payload
+  ---
+  duration_ms: 3.7057
+  type: 'test'
+  ...
+# Subtest: Unsupported conflict through HTTP does not call DB
+ok 28 - Unsupported conflict through HTTP does not call DB
+  ---
+  duration_ms: 2.0946
+  type: 'test'
+  ...
+# Subtest: NO_DATA through HTTP produces a valid DEFER
+ok 29 - NO_DATA through HTTP produces a valid DEFER
+  ---
+  duration_ms: 3.1619
+  type: 'test'
+  ...
+# Subtest: DB 400 stays INVALID -> DEFER and does not expose upstream text
+ok 30 - DB 400 stays INVALID -> DEFER and does not expose upstream text
+  ---
+  duration_ms: 2.8294
+  type: 'test'
+  ...
+# Subtest: Malformed DB response bad-json returns controlled 502
+ok 31 - Malformed DB response bad-json returns controlled 502
+  ---
+  duration_ms: 2.2523
+  type: 'test'
+  ...
+# Subtest: Malformed DB response null returns controlled 502
+ok 32 - Malformed DB response null returns controlled 502
+  ---
+  duration_ms: 2.6302
+  type: 'test'
+  ...
+# Subtest: Malformed DB response array returns controlled 502
+ok 33 - Malformed DB response array returns controlled 502
+  ---
+  duration_ms: 2.1953
+  type: 'test'
+  ...
+# Subtest: Malformed DB response empty returns controlled 502
+ok 34 - Malformed DB response empty returns controlled 502
+  ---
+  duration_ms: 1.8091
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {"column":"wrong"}
+ok 35 - Reject evidence inconsistent with the DB contract: {"column":"wrong"}
+  ---
+  duration_ms: 1.6865
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {"database":"oracle"}
+ok 36 - Reject evidence inconsistent with the DB contract: {"database":"oracle"}
+  ---
+  duration_ms: 1.9997
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {}
+ok 37 - Reject evidence inconsistent with the DB contract: {}
+  ---
+  duration_ms: 1.9969
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":"2"}
+ok 38 - Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":"2"}
+  ---
+  duration_ms: 1.5817
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {"thresholdUnit":"UNKNOWN"}
+ok 39 - Reject evidence inconsistent with the DB contract: {"thresholdUnit":"UNKNOWN"}
+  ---
+  duration_ms: 1.7177
+  type: 'test'
+  ...
+# Subtest: Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":11}
+ok 40 - Reject evidence inconsistent with the DB contract: {"valuesAboveThreshold":11}
+  ---
+  duration_ms: 2.4015
+  type: 'test'
+  ...
+# Subtest: DB 5xx returns controlled 502 without leaking response body
+ok 41 - DB 5xx returns controlled 502 without leaking response body
+  ---
+  duration_ms: 3.6244
+  type: 'test'
+  ...
+# Subtest: DB redirect is refused instead of forwarding evidence requests
+ok 42 - DB redirect is refused instead of forwarding evidence requests
+  ---
+  duration_ms: 1.8744
+  type: 'test'
+  ...
+# Subtest: Timeout covers timeout
+ok 43 - Timeout covers timeout
+  ---
+  duration_ms: 66.3067
+  type: 'test'
+  ...
+# Subtest: Timeout covers slow-body
+ok 44 - Timeout covers slow-body
+  ---
+  duration_ms: 60.9448
+  type: 'test'
+  ...
+# Subtest: Invalid DB configuration is sanitized: not-a-url
+ok 45 - Invalid DB configuration is sanitized: not-a-url
+  ---
+  duration_ms: 1.5774
+  type: 'test'
+  ...
+# Subtest: Invalid DB configuration is sanitized: file
+ok 46 - Invalid DB configuration is sanitized: file
+  ---
+  duration_ms: 0.9217
+  type: 'test'
+  ...
+# Subtest: Invalid DB configuration is sanitized: http
+ok 47 - Invalid DB configuration is sanitized: http
+  ---
+  duration_ms: 0.8536
+  type: 'test'
+  ...
+# Subtest: Invalid DB configuration is sanitized: http
+ok 48 - Invalid DB configuration is sanitized: http
+  ---
+  duration_ms: 0.8612
+  type: 'test'
+  ...
+# Subtest: Invalid timeout 0 is a configuration error
+ok 49 - Invalid timeout 0 is a configuration error
+  ---
+  duration_ms: 1.0591
+  type: 'test'
+  ...
+# Subtest: Invalid timeout -1 is a configuration error
+ok 50 - Invalid timeout -1 is a configuration error
+  ---
+  duration_ms: 0.8918
+  type: 'test'
+  ...
+# Subtest: Invalid timeout abc is a configuration error
+ok 51 - Invalid timeout abc is a configuration error
+  ---
+  duration_ms: 0.9205
+  type: 'test'
+  ...
+# Subtest: Invalid timeout 1.5 is a configuration error
+ok 52 - Invalid timeout 1.5 is a configuration error
+  ---
+  duration_ms: 0.9253
+  type: 'test'
+  ...
+# Subtest: Invalid timeout 60001 is a configuration error
+ok 53 - Invalid timeout 60001 is a configuration error
+  ---
+  duration_ms: 0.9187
+  type: 'test'
+  ...
+# Subtest: Network refusal produces controlled 502
+ok 54 - Network refusal produces controlled 502
+  ---
+  duration_ms: 2.5867
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {}
+ok 55 - Invalid conflict input returns 400 before accessing DB: {}
+  ---
+  duration_ms: 0.9279
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: []
+ok 56 - Invalid conflict input returns 400 before accessing DB: []
+  ---
+  duration_ms: 0.9204
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: null
+ok 57 - Invalid conflict input returns 400 before accessing DB: null
+  ---
+  duration_ms: 1.4141
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+ok 58 - Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+  ---
+  duration_ms: 1.0346
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":123,"column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+ok 59 - Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":123,"column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+  ---
+  duration_ms: 0.9133
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {"conflictId":" ","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+ok 60 - Invalid conflict input returns 400 before accessing DB: {"conflictId":" ","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+  ---
+  duration_ms: 0.8363
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":null,"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+ok 61 - Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":null,"target":{"database":"oracle","type":"VARCHAR2(200)"}}
+  ---
+  duration_ms: 0.8011
+  type: 'test'
+  ...
+# Subtest: Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":[]}
+ok 62 - Invalid conflict input returns 400 before accessing DB: {"conflictId":"clientes.email","table":"clientes","column":"email","source":{"database":"mysql","type":"VARCHAR(300)"},"target":[]}
+  ---
+  duration_ms: 0.8611
+  type: 'test'
+  ...
+# Subtest: Malformed JSON and oversized body return JSON 400/413
+ok 63 - Malformed JSON and oversized body return JSON 400/413
+  ---
+  duration_ms: 2.3863
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: undefined 
+ok 64 - Chat validates input type and size: undefined 
+  ---
+  duration_ms: 0.9243
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: object 
+ok 65 - Chat validates input type and size: object 
+  ---
+  duration_ms: 2.6851
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: object 
+ok 66 - Chat validates input type and size: object 
+  ---
+  duration_ms: 0.8164
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: object 
+ok 67 - Chat validates input type and size: object 
+  ---
+  duration_ms: 0.767
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: number 
+ok 68 - Chat validates input type and size: number 
+  ---
+  duration_ms: 0.7983
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: boolean 
+ok 69 - Chat validates input type and size: boolean 
+  ---
+  duration_ms: 0.965
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: string 0
+ok 70 - Chat validates input type and size: string 0
+  ---
+  duration_ms: 0.7879
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: string 3
+ok 71 - Chat validates input type and size: string 3
+  ---
+  duration_ms: 0.8004
+  type: 'test'
+  ...
+# Subtest: Chat validates input type and size: string 10001
+ok 72 - Chat validates input type and size: string 10001
+  ---
+  duration_ms: 0.8258
+  type: 'test'
+  ...
+# Subtest: Chat without credentials returns 503; health still works
+ok 73 - Chat without credentials returns 503; health still works
+  ---
+  duration_ms: 1.6412
+  type: 'test'
+  ...
+# Subtest: Tool allowlist rejects inherited names and removed demo tools
+ok 74 - Tool allowlist rejects inherited names and removed demo tools
+  ---
+  duration_ms: 0.3805
+  type: 'test'
+  ...
+# Subtest: Tool arguments reject null, arrays and missing identifiers
+ok 75 - Tool arguments reject null, arrays and missing identifiers
+  ---
+  duration_ms: 0.1622
+  type: 'test'
+  ...
+# Subtest: Unknown route is JSON 404 and internal exception details stay private
+ok 76 - Unknown route is JSON 404 and internal exception details stay private
+  ---
+  duration_ms: 3.0416
+  type: 'test'
+  ...
+# Subtest: HTTP chat success preserves provider response fields
+ok 77 - HTTP chat success preserves provider response fields
+  ---
+  duration_ms: 2.8191
+  type: 'test'
+  ...
+# Subtest: Provider selection normalizes case and whitespace
+ok 78 - Provider selection normalizes case and whitespace
+  ---
+  duration_ms: 0.9484
+  type: 'test'
+  ...
+# Subtest: Unknown provider names reject without echoing their values
+ok 79 - Unknown provider names reject without echoing their values
+  ---
+  duration_ms: 0.3056
+  type: 'test'
+  ...
+# Subtest: Configuration is checked per attempted provider
+ok 80 - Configuration is checked per attempted provider
+  ---
+  duration_ms: 0.1485
+  type: 'test'
+  ...
+# Subtest: Invalid AI timeout 0 rejects
+ok 81 - Invalid AI timeout 0 rejects
+  ---
+  duration_ms: 0.0712
+  type: 'test'
+  ...
+# Subtest: Invalid AI timeout NaN rejects
+ok 82 - Invalid AI timeout NaN rejects
+  ---
+  duration_ms: 0.0548
+  type: 'test'
+  ...
+# Subtest: Invalid AI timeout -1 rejects
+ok 83 - Invalid AI timeout -1 rejects
+  ---
+  duration_ms: 0.0468
+  type: 'test'
+  ...
+# Subtest: Invalid AI timeout 120001 rejects
+ok 84 - Invalid AI timeout 120001 rejects
+  ---
+  duration_ms: 0.1051
+  type: 'test'
+  ...
+# Subtest: Primary success returns the original chat response contract
+ok 85 - Primary success returns the original chat response contract
+  ---
+  duration_ms: 0.1654
+  type: 'test'
+  ...
+# Subtest: Fallback runs once and records the actual provider
+ok 86 - Fallback runs once and records the actual provider
+  ---
+  duration_ms: 0.3119
+  type: 'test'
+  ...
+# Subtest: Missing primary credentials can use a configured fallback
+ok 87 - Missing primary credentials can use a configured fallback
+  ---
+  duration_ms: 0.3277
+  type: 'test'
+  ...
+# Subtest: Same provider is not retried as its own fallback; errors are sanitized
+ok 88 - Same provider is not retried as its own fallback; errors are sanitized
+  ---
+  duration_ms: 0.2083
+  type: 'test'
+  ...
+# Subtest: Empty provider text activates fallback rather than successful empty JSON
+ok 89 - Empty provider text activates fallback rather than successful empty JSON
+  ---
+  duration_ms: 0.0738
+  type: 'test'
+  ...
+# Subtest: Both providers failing returns a controlled error
+ok 90 - Both providers failing returns a controlled error
+  ---
+  duration_ms: 0.0849
+  type: 'test'
+  ...
+# Subtest: Provider factory rejects unknown provider
+ok 91 - Provider factory rejects unknown provider
+  ---
+  duration_ms: 0.1519
+  type: 'test'
+  ...
+# Subtest: Gemini supports responses without optional steps
+ok 92 - Gemini supports responses without optional steps
+  ---
+  duration_ms: 0.2185
+  type: 'test'
+  ...
+# Subtest: Gemini returns every tool result using matching call IDs
+ok 93 - Gemini returns every tool result using matching call IDs
+  ---
+  duration_ms: 0.1483
+  type: 'test'
+  ...
+# Subtest: Gemini handles successive tool rounds and stops at three
+ok 94 - Gemini handles successive tool rounds and stops at three
+  ---
+  duration_ms: 0.1871
+  type: 'test'
+  ...
+# Subtest: Gemini caps a batch before executing more than eight tools
+ok 95 - Gemini caps a batch before executing more than eight tools
+  ---
+  duration_ms: 0.1066
+  type: 'test'
+  ...
+# Subtest: Gemini rejects unknown tools and duplicate call IDs
+ok 96 - Gemini rejects unknown tools and duplicate call IDs
+  ---
+  duration_ms: 0.1646
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: undefined
+ok 97 - Gemini malformed response is not accepted: undefined
+  ---
+  duration_ms: 0.0797
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: {}
+ok 98 - Gemini malformed response is not accepted: {}
+  ---
+  duration_ms: 0.0828
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: {"output_text":""}
+ok 99 - Gemini malformed response is not accepted: {"output_text":""}
+  ---
+  duration_ms: 0.0446
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: {"steps":{}}
+ok 100 - Gemini malformed response is not accepted: {"steps":{}}
+  ---
+  duration_ms: 0.0348
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: {"steps":[{"type":"function_call","id":"call-1","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]}
+ok 101 - Gemini malformed response is not accepted: {"steps":[{"type":"function_call","id":"call-1","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]}
+  ---
+  duration_ms: 0.0438
+  type: 'test'
+  ...
+# Subtest: Gemini malformed response is not accepted: {"id":"i","steps":[{"type":"function_call","id":"","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]}
+ok 102 - Gemini malformed response is not accepted: {"id":"i","steps":[{"type":"function_call","id":"","name":"profileColumn","arguments":{"database":"mysql","table":"clientes","column":"email"}}]}
+  ---
+  duration_ms: 0.0354
+  type: 'test'
+  ...
+# Subtest: OpenAI Responses request keeps instructions and model
+ok 103 - OpenAI Responses request keeps instructions and model
+  ---
+  duration_ms: 0.122
+  type: 'test'
+  ...
+# Subtest: OpenAI empty output is an error
+ok 104 - OpenAI empty output is an error
+  ---
+  duration_ms: 0.0928
+  type: 'test'
+  ...
+# Subtest: Only the three real DB tools are advertised
+ok 105 - Only the three real DB tools are advertised
+  ---
+  duration_ms: 0.4229
+  type: 'test'
+  ...
+# Subtest: Standalone server loads DB URL from .env without keys and passes smoke against fixture DB
+ok 106 - Standalone server loads DB URL from .env without keys and passes smoke against fixture DB
+  ---
+  duration_ms: 390.9597
+  type: 'test'
+  ...
+1..106
+# tests 106
+# suites 0
+# pass 106
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 508.5177
+

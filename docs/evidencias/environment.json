@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-17",
+  "os": "Windows x64",
+  "node24": "24.17.0",
+  "node22": "22.23.5",
+  "npm": "11.13.0",
+  "dockerBuild": "not run: Docker daemon unavailable",
+  "liveDatabaseTests": "not run",
+  "liveProviderTests": "not run",
+  "githubCI": "prepared; not run",
+  "initialShellTestAttempt": "53 passed; 52 failed because loopback connections were blocked with EACCES. Same suite passed using the local JavaScript execution tool."
+}

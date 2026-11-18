@@ -2,10 +2,15 @@
   "name": "ai-service",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
-  "main": "index.js",
+  "description": "AI Layer: análise conservadora de conflitos de migração com evidências do DB Layer",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/conflict.test.js test/http.test.js test/providers.test.js test/startup.test.js",
+    "test:coverage": "node --test --experimental-test-coverage test/conflict.test.js test/http.test.js test/providers.test.js test/startup.test.js",
+    "smoke": "node scripts/smoke.mjs"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +20,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "openai": "^7.5.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
