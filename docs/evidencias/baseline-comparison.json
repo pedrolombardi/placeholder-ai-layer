@@ -1,0 +1,102 @@
+[
+  {
+    "path": ".env.example",
+    "identical": true,
+    "zip_sha256": "8d34b9761633fbc6148fa57514f3bdc3e861f3ccb6763d555ce7ce78374976ae"
+  },
+  {
+    "path": ".gitignore",
+    "identical": true,
+    "zip_sha256": "de63821e8f2dd763bdc19edfe927dd28dbb1f4eb98e11fd92af67a7f524bee4e"
+  },
+  {
+    "path": "package.json",
+    "identical": true,
+    "zip_sha256": "6b62b3a7b0fcc6abf6c6d33cd0e2758563f72679c2f028c2a536de9afb787633"
+  },
+  {
+    "path": "package-lock.json",
+    "identical": true,
+    "zip_sha256": "4213b6d3fe5848fde45264260853c3f453210cc11d5549394c2ddf5dc8947683"
+  },
+  {
+    "path": "src/prompts/systemPrompt.js",
+    "identical": true,
+    "zip_sha256": "b109f15ed062e5211c932fe28861391229d6305c4fde7441b5f4cd4730716759"
+  },
+  {
+    "path": "src/server.js",
+    "identical": true,
+    "zip_sha256": "ce24fae31fcbf236aa21705aba69696d33c6b66d70ce0e3652b75fc5c52aaae6"
+  },
+  {
+    "path": "src/routes/aiRoutes.js",
+    "identical": true,
+    "zip_sha256": "239e0930171d3fb044160ba65867b87eedbf6e4c4914079a933b4eec104aa54b"
+  },
+  {
+    "path": "src/tools/migrationTools.js",
+    "identical": true,
+    "zip_sha256": "95f5629a0f423a4593767cba1cd70354128026a4ac16d21157118640d4d7e75f"
+  },
+  {
+    "path": "src/tools/toolDefinitions.js",
+    "identical": true,
+    "zip_sha256": "42d04d7e520625fcc7403f992a2fedcce2984dc46557a291ce965c07d1c99f55"
+  },
+  {
+    "path": "src/tools/systemTools.js",
+    "identical": true,
+    "zip_sha256": "469a76ad086b53d3489c4e6518414f1e14d636306cdbbf3c87e008288f9f629a"
+  },
+  {
+    "path": "src/tools/toolExecutor.js",
+    "identical": true,
+    "zip_sha256": "1378fdb387a000f42c8c3fc1594fc9e94e396596f5b8373b4d0312eb18c86793"
+  },
+  {
+    "path": "src/config/aiConfig.js",
+    "identical": true,
+    "zip_sha256": "cc9135dd05dbbab10966f47cab035dfaca0ff66c2a82af7930c736a902a27bff"
+  },
+  {
+    "path": "src/services/aiService.js",
+    "identical": true,
+    "zip_sha256": "1137609ff44cad26f03fb57aaf9e24890ff5c9a6aa7b22bb4813af1f248ec8df"
+  },
+  {
+    "path": "src/services/conflictAnalysisService.js",
+    "identical": true,
+    "zip_sha256": "18b24afcab7c48983397e232e9ec12058e47eb2e6186badc37e066a24c8e2503"
+  },
+  {
+    "path": "src/providers/openaiProvider.js",
+    "identical": true,
+    "zip_sha256": "0640796bacf0f2691558ba163fc6644443d09076e7b24641f6fe70adae560529"
+  },
+  {
+    "path": "src/providers/providerFactory.js",
+    "identical": true,
+    "zip_sha256": "9cfc14bd2db364470768cabf4ddfd4854c409e48d9303a3166c5e29ee0e62068"
+  },
+  {
+    "path": "src/providers/geminiProvider.js",
+    "identical": true,
+    "zip_sha256": "fddd586ed590eeb52d1db02fb3daa1ea55cfbfa7acd9ca0972eb0d3df9b0af78"
+  },
+  {
+    "path": ".dockerignore",
+    "identical": true,
+    "zip_sha256": "5178fef24564dedb2d1abaef3bce1ea3d5dd034461f5d35f0f242155aca76130"
+  },
+  {
+    "path": "AI_LAYER.md",
+    "identical": true,
+    "zip_sha256": "240c5ffb7d1fb629c3814163418dc22cfc3280b91cc5dc1c1d1b78cdfe33f944"
+  },
+  {
+    "path": "Dockerfile",
+    "identical": true,
+    "zip_sha256": "4672cd4526b2507b995749b9c4d2bcb5c78df76c059ca3221cbdb64ee57d2df1"
+  }
+]

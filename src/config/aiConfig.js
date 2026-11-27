@@ -1,65 +1,24 @@
-const SUPPORTED_PROVIDERS = [
-    "gemini",
-    "openai"
-];
+import { ServiceError } from "../errors.js";
+const supported = ["gemini", "openai"];
+const configError = () => new ServiceError("AI_CONFIG", 503, "Provider de IA não configurado corretamente");
 
-export function getAIConfig() {
-
-    const provider = (
-        process.env.AI_PROVIDER || "gemini"
-    ).toLowerCase();
-
-    const fallbackProvider = (
-        process.env.AI_FALLBACK_PROVIDER || ""
-    ).toLowerCase();
-
-    if (
-    fallbackProvider &&
-    !SUPPORTED_PROVIDERS.includes(fallbackProvider)
-    ) {
-    throw new Error(
-        `Fallback provider não suportado: ${fallbackProvider}`
-        );
+export function getAIConfig(env = process.env) {
+    const provider = (env.AI_PROVIDER || "gemini").trim().toLowerCase();
+    const fallbackProvider = (env.AI_FALLBACK_PROVIDER || "").trim().toLowerCase();
+    if (!supported.includes(provider) || (fallbackProvider && !supported.includes(fallbackProvider))) {
+        throw configError();
     }
+    return { provider, fallbackProvider };
+}
 
-    if (!SUPPORTED_PROVIDERS.includes(provider)) {
-        throw new Error(
-            `Provider não suportado: ${provider}`
-        );
+export function getProviderConfig(provider, env = process.env) {
+    if (!supported.includes(provider)) throw configError();
+    const prefix = provider === "gemini" ? "GEMINI" : "OPENAI";
+    const apiKey = env[`${prefix}_API_KEY`]?.trim();
+    const model = env[`${prefix}_MODEL`]?.trim();
+    const timeout = Number(env.AI_TIMEOUT_MS || 15000);
+    if (!apiKey || !model || !Number.isInteger(timeout) || timeout < 1 || timeout > 120000) {
+        throw configError();
     }
-
-    if (provider === "gemini") {
-
-        if (!process.env.GEMINI_API_KEY) {
-            throw new Error(
-                "GEMINI_API_KEY não configurada"
-            );
-        }
-
-        if (!process.env.GEMINI_MODEL) {
-            throw new Error(
-                "GEMINI_MODEL não configurado"
-            );
-        }
-    }
-
-    if (provider === "openai") {
-
-        if (!process.env.OPENAI_API_KEY) {
-            throw new Error(
-                "OPENAI_API_KEY não configurada"
-            );
-        }
-
-        if (!process.env.OPENAI_MODEL) {
-            throw new Error(
-                "OPENAI_MODEL não configurado"
-            );
-        }
-    }
-
-    return {
-        provider,
-        fallbackProvider
-    };
+    return { apiKey, model, timeout };
 }
